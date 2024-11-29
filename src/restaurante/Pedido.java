@@ -1,4 +1,5 @@
 package restaurante;
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,9 +31,8 @@ public class Pedido {
 
 
 }
-
+*/
 /*
-
 public class Pedido {
     private static int idContador;
     private final int idPedido;
@@ -102,6 +102,50 @@ public class Pedido {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-}
+} */
+public class Pedido {
+    private static int contadorID = 0; // Contador para IDs únicos
+    private int idPedido;
+    private Comensal comensal;
+    private StringBuilder platos;
+    private double total;
 
- */
+    public Pedido(Comensal comensal) {
+        this.idPedido = ++contadorID;
+        this.comensal = comensal;
+        this.platos = new StringBuilder();
+        this.total = 0.0;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public Comensal getComensal() {
+        return comensal;
+    }
+
+    public void recibirPedidoDelMesero(Mesero mesero, Plato plato) {
+        if (plato.estaDisponible()) {
+            platos.append("Plato: ").append(plato.getNombre())
+                    .append(", Precio: $").append(plato.getPrecio()).append("\n");
+            total += plato.getPrecio(); // Actualiza el total
+            System.out.println("El mesero " + mesero.getNombre() + " agregó el plato '"
+                    + plato.getNombre() + "' al pedido #" + idPedido);
+        } else {
+            System.out.println("El plato '" + plato.getNombre() + "' no está disponible.");
+        }
+    }
+
+    public double calcularTotal() {
+        return total; // Devuelve el total acumulado
+    }
+
+    public void imprimirFactura() {
+        System.out.println("Factura del Pedido #" + idPedido);
+        System.out.println("Cedula: " + comensal.getCedulaComensal());
+        System.out.println("Comensal: " + comensal.getNombreComensal());
+        System.out.println(platos.toString());
+        System.out.println("Total: $" + calcularTotal());
+    }
+}

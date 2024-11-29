@@ -1,4 +1,5 @@
 package restaurante;
+/*
 public class Plato {
 
     private String nombre;
@@ -24,8 +25,8 @@ public class Plato {
     }
 
 }
+*/
 /*
-
 public class Plato {
     private int idPlato;
     private String nombre;
@@ -47,7 +48,7 @@ public class Plato {
         return idPlato;
     }
 
-    public String getNombre() {
+    public String getNombrePlato() {
         return nombre;
     }
 
@@ -89,5 +90,40 @@ public class Plato {
     }
 
 }
+*/
+public class Plato {
+    private String nombre;
+    private double precio;
+    private boolean disponible;
 
- */
+    public Plato(String nombre, double precio, boolean disponible) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.disponible = disponible;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public boolean estaDisponible() {
+        return disponible;
+    }
+
+}

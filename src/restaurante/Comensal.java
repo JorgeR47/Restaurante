@@ -1,32 +1,35 @@
 package restaurante;
 public class Comensal {
+    private String nombre;
+    private String cedula;
 
-    private String nombre ;
+    public Comensal(String nombre, String cedula) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+    }
 
-    public Comensal (String nombre){
-
+    public void setNombreComensal(String nombre) {
         this.nombre = nombre;
     }
-    public String getNombre(){
 
+    public void setCedulaComensal(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getNombreComensal() {
         return nombre;
     }
-    
-    @Override
-    public String toString(){
 
-        return "Comensal: "+ nombre;
+    public String getCedulaComensal() {
+        return cedula;
     }
 
-}
-/*
-import java.io.PipedInputStream;
+    public void realizarPedido() {
+        System.out.println("Pedido realizado por: " + nombre);
+    }
 
-public class Comensal {
-    private int idComensal;
-    private String nombre;
-    private Pedido pedido;
-
+    public void cancelarPedido() {
+        System.out.println("Pedido cancelado por: " + nombre);
+    }
 }
 
- */

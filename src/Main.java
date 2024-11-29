@@ -1,6 +1,12 @@
 /*
 public class Main {
     public static void main(String[] args) {
+
+
+
+
+
+        //todo considraciones de las clases
         // Crear platos
         Plato plato1 = new Plato("Lasaña", 8.50);
         Plato plato2 = new Plato("Ensalada César", 5.20);
@@ -134,5 +140,6 @@ class Comensal {
     public String obtenerNombre() {
         return "Comensal: " + nombre;
     }
-}
-*/
+
+
+} */
